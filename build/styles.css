@@ -1,0 +1,390 @@
+html {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background: #1E80F0 url(http://unsplash.it/2500/2000?image=830&blur=50);
+ }
+ 
+ *, *:before, *:after {
+   -webkit-box-sizing: inherit;
+           box-sizing: inherit;
+   padding: 0;
+   margin: 0;
+ } 
+
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper{
+	display: block;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.weather-app{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	border-radius: 15px;
+	margin: 5vh auto 5vh auto;
+	-webkit-box-flex: 0.8;
+	    -ms-flex-positive: 0.8;
+	        flex-grow: 0.8;
+	/* box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;  left and right*/
+	-webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+	        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.main{
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 15px 15px 0px 0px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+}
+
+h1{
+	padding: 40px;
+	color: white;
+	font-size: 45px;
+}
+
+h2{
+	padding: 10px;
+	padding-left: 40px; 
+	color: white;
+	font-size: 35px;
+	-ms-flex-preferred-size: 1;
+	    flex-basis: 1;
+}
+
+
+
+li{
+	list-style: none;
+	margin:0;
+	padding:20px;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	text-transform: capitalize;
+}
+
+nav{
+	position: relative;
+}
+
+.links{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+	-webkit-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
+	font-size: 20px;
+	padding-right: 20px;
+}
+
+.links a{
+	color: white;
+	text-decoration: none;
+}
+
+.c-f{
+	font-size: 25px;
+
+}
+
+.wi-celsius{
+	-webkit-transition: font-size 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+	transition: font-size 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+}
+
+.wi-fahrenheit{
+	-webkit-transition: font-size 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+	transition: font-size 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+}
+
+
+
+.temp-active{
+	font-size: 55px;	
+}
+
+.links a:hover{
+	text-decoration: underline;
+}
+
+.data{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	border-radius: 0px 0px 15px 15px;
+}
+
+.currently{
+	background: rgba(150, 150, 150, 0.3);
+	border-radius: 0px 0px 0px 15px;
+	display: none;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	color: white;
+}
+
+.currently-text{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.currently-data{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+
+.currently-data i{
+	font-size: 80px;
+	-ms-flex-item-align: end;
+	    align-self: flex-end;
+}
+
+[data-currently="temperature"]{
+	font-size: 100px;
+}
+
+
+.forecast{
+	background: rgba(150, 150, 150, 0.3);
+	border-radius: 0px 0px 15px 0px;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-flex: 2;
+	    -ms-flex: 2;
+	        flex: 2;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack:  center;
+	    -ms-flex-pack:  center;
+	        justify-content:  center;
+}
+
+.hourly{
+	display: none;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	max-width: 60rem;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.hourly i{
+	font-size: 25px;
+}
+
+.hourly i.wi-humidity{
+	font-size: 15px;
+}
+
+.daily{
+	display: none;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.daily i{
+	font-size: 35px;
+}
+
+.daily i.wi-humidity{
+	font-size: 15px;
+}
+
+.loader {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.circle {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #FFF;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+
+
+/* Clock */
+
+.clock {
+	  display: none;
+      width: 10rem;
+      height: 10rem;
+      border:0.1rem solid white;
+      border-radius:50%;
+      margin:20px auto;
+      position: relative;
+      padding:2rem;
+      -webkit-box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+              box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      -webkit-transform: translateY(-3px);
+              transform: translateY(-3px); /* account for the height of the clock hands */
+      
+    }
+
+    .hand {
+      width:50%;
+      height:5px;
+      background:white;
+      position: absolute;
+      top:50%;
+      -webkit-transform-origin: 100%;
+              transform-origin: 100%;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+      /* transition: all 0.05s cubic-bezier(0.2, 2.7, 0.58, 1); */
+    }
+
+.hour-hand{
+  /*width:30%;*/
+  height:7px;
+  /*transform-origin: 1.9rem -0.4rem 0;*/
+}
+
+.second-hand{
+  background: red;
+}
+
+/* Animations */
+
+@-webkit-keyframes spin { 
+  100% { 
+    -webkit-transform: rotate(360deg); 
+            transform: rotate(360deg); 
+  } 
+}
+
+@keyframes spin { 
+  100% { 
+    -webkit-transform: rotate(360deg); 
+            transform: rotate(360deg); 
+  } 
+}
+
+/* Media Queries */
+@media only screen and (min-width:851px){
+	.clock {
+		width: 16rem;
+		height: 16rem;
+	}
+}
+
+
+@media only screen and (max-width:850px){
+	li{-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;}
+	.data{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;border-radius: 0px 0px 0px 0px;}
+	.forecast{border-radius: 0px 0px 0px 0px;}
+	.daily{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;font-size: 20px;-webkit-box-flex:1;-ms-flex:1;flex:1;}
+	.hourly{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;font-size: 20px;-webkit-box-flex:1;-ms-flex:1;flex:1;}
+	.currently-data{display: none;}
+	.now{display: none;}
+	.clock {
+		width: 12rem;
+		height: 12rem;
+	}
+}
+
+@media only screen and (max-width:400px) {
+	h1{font-size: 25px;}
+	h2{font-size: 32px;}
+	.clock{
+		width: 8rem;
+		height: 8rem;
+		margin: 0px;
+		margin-right: 10px;
+	}
+}

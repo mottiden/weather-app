@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="author" content="Jacopo Parvizi" />
+    <meta name="description" content="Local Weather App" />
+    <link rel="stylesheet" href="build/styles.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="weather-app">
+        <div class="main">
+        <div class="currently-text">
+          <h2><span data-currently="time"></span></h2>
+          <h2><span data-currently="summary"></span></h2>
+          <div class="clock">
+            <div class="clock-face">
+              <div class="hand hour-hand"></div>
+              <div class="hand min-hand"></div>
+              <div class="hand second-hand"></div>
+            </div>
+          </div>
+        </div>
+          <h1 class="location">Fetching local weather</h1>
+          <div class="loader">
+              <div class="circle"></div>
+          </div>
+          <nav>
+            <ul class="links">
+              <li><a href="#" class="today" >TODAY</a></li>
+              <li><a href="#" class="this-week">THIS WEEK</a></li>
+              <li><a href="#" class="c-f"><i class="wi wi-celsius"></i><i class="wi wi-fahrenheit temp-active"></i></a></li>
+            </ul>
+          </nav>  
+        </div>
+        <div class="data">
+          <div class="currently">
+            <div class="loader">
+              <div class="circle"></div>
+            </div>
+            <div class="currently-data">
+              <span data-currently="temperature"></span>
+              <i class="icon wi wi-cloudy"></i>
+            </div>
+            <div class="now">
+              <strong>NOW</strong>
+            </div>
+          </div>
+
+          <div class="forecast">
+            <ul class="daily">
+              <!-- from 1-7 -->
+            </ul>
+            <ul class="hourly">
+              <!-- from 1-12 -->
+            </ul>
+            <div class="loader">
+              <div class="circle"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="build/weather.js" type="text/javascript" charset="utf-8" async defer></script>
+  </body>
+</html>

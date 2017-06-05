@@ -1,0 +1,294 @@
+html {
+	box-sizing: border-box;
+	background: #1E80F0 url(http://unsplash.it/2500/2000?image=830&blur=50);
+ }
+ 
+ *, *:before, *:after {
+   box-sizing: inherit;
+   padding: 0;
+   margin: 0;
+ } 
+
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper{
+	display: block;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.weather-app{
+	display: flex;
+	flex-direction: column;
+	border-radius: 15px;
+	margin: 5vh auto 5vh auto;
+	flex-grow: 0.8;
+	/* box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;  left and right*/
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.main{
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 15px 15px 0px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+h1{
+	padding: 40px;
+	color: white;
+	font-size: 45px;
+}
+
+h2{
+	padding: 10px;
+	padding-left: 40px; 
+	color: white;
+	font-size: 35px;
+	flex-basis: 1;
+}
+
+
+
+li{
+	list-style: none;
+	margin:0;
+	padding:20px;
+	transition: all 0.2s;
+	display:flex;
+	flex-direction: column;
+	justify-content:space-between;
+	text-transform: capitalize;
+}
+
+nav{
+	position: relative;
+}
+
+.links{
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	font-size: 20px;
+	padding-right: 20px;
+}
+
+.links a{
+	color: white;
+	text-decoration: none;
+}
+
+.c-f{
+	font-size: 25px;
+
+}
+
+.wi-celsius{
+	transition: font-size 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+}
+
+.wi-fahrenheit{
+	transition: font-size 0.5s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+}
+
+
+
+.temp-active{
+	font-size: 55px;	
+}
+
+.links a:hover{
+	text-decoration: underline;
+}
+
+.data{
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 0px 0px 15px 15px;
+}
+
+.currently{
+	background: rgba(150, 150, 150, 0.3);
+	border-radius: 0px 0px 0px 15px;
+	display: none;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.currently-text{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.currently-data{
+	display: flex;
+	flex-direction: row;
+}
+
+.currently-data i{
+	font-size: 80px;
+	align-self: flex-end;
+}
+
+[data-currently="temperature"]{
+	font-size: 100px;
+}
+
+
+.forecast{
+	background: rgba(150, 150, 150, 0.3);
+	border-radius: 0px 0px 15px 0px;
+	flex-wrap: wrap;
+	flex: 2;
+	display: flex;
+	align-items: center;
+	justify-content:  center;
+}
+
+.hourly{
+	display: none;
+	flex-wrap: wrap;
+	max-width: 60rem;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	justify-content: space-between;
+}
+
+.hourly i{
+	font-size: 25px;
+}
+
+.hourly i.wi-humidity{
+	font-size: 15px;
+}
+
+.daily{
+	display: none;
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	justify-content: space-between;
+}
+
+.daily i{
+	font-size: 35px;
+}
+
+.daily i.wi-humidity{
+	font-size: 15px;
+}
+
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.circle {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #FFF;
+  animation: spin 1s infinite linear;
+}
+
+
+/* Clock */
+
+.clock {
+	  display: none;
+      width: 10rem;
+      height: 10rem;
+      border:0.1rem solid white;
+      border-radius:50%;
+      margin:20px auto;
+      position: relative;
+      padding:2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+      
+    }
+
+    .hand {
+      width:50%;
+      height:5px;
+      background:white;
+      position: absolute;
+      top:50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      /* transition: all 0.05s cubic-bezier(0.2, 2.7, 0.58, 1); */
+    }
+
+.hour-hand{
+  /*width:30%;*/
+  height:7px;
+  /*transform-origin: 1.9rem -0.4rem 0;*/
+}
+
+.second-hand{
+  background: red;
+}
+
+/* Animations */
+
+@keyframes spin { 
+  100% { 
+    transform: rotate(360deg); 
+  } 
+}
+
+/* Media Queries */
+@media only screen and (min-width:851px){
+	.clock {
+		width: 16rem;
+		height: 16rem;
+	}
+}
+
+
+@media only screen and (max-width:850px){
+	li{flex-direction: row;}
+	.data{flex-direction: column;border-radius: 0px 0px 0px 0px;}
+	.forecast{border-radius: 0px 0px 0px 0px;}
+	.daily{flex-direction: column;font-size: 20px;flex:1;}
+	.hourly{flex-direction: column;font-size: 20px;flex:1;}
+	.currently-data{display: none;}
+	.now{display: none;}
+	.clock {
+		width: 12rem;
+		height: 12rem;
+	}
+}
+
+@media only screen and (max-width:400px) {
+	h1{font-size: 25px;}
+	h2{font-size: 32px;}
+	.clock{
+		width: 8rem;
+		height: 8rem;
+		margin: 0px;
+		margin-right: 10px;
+	}
+}
