@@ -2,12 +2,12 @@
 
 ## How it works
 
-Download this repo. Click on index.html and allow the browser to share your location. That's it really.
+[Download](https://github.com/mottiden/weather-app/archive/master.zip) this repo. Click on index.html and allow the browser to share your location. That's it really.
 
 
 ## Demo
 
-Check out the demo project for a quick example of how weather-app works. 
+Check out the [demo](https://jacopoparvizi.com/assets/apps/weather-app/index.html) project for a quick example of how weather-app works. 
 
 On Desktop:
 
